@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8 UTF-16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/50ca4bca32.js" crossorigin="anonymous"></script>
+
+    <script src="./script/time.js" async></script>
+    <script src="./script/themes.js" async></script>
+    <script src="./script/sidebar.js" async></script>
+    <script src="./script/addLinkMenu.js" async></script>
+    <script src="./script/groupMenu.js" async></script>
+    <title>Welcome</title>
+</head>
+
+<body>
+
+    <div class="header-container">
+        <h2>Welcome</h2>
+        <h1>Kunal Dhand</h1>
+        <div class="status-strip">
+            <span class="date"></span>
+            <span> | </span>
+            <span class="time"></span>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="card-container">
+            <!---Social container-->
+            <div class="container" id="social">
+                <div class="dots-icon">
+                    <i class="fa-solid fa-ellipsis-h" onclick="toggleGroupMenu(event, 'social')"></i>
+                </div>
+                <div class="group-menu" id="menu-social">
+                    <ul>
+                        <li onclick="renameGroup('social')">Rename</li>
+                        <li onclick="removeGroup('social')">Remove</li>
+                        <li>Edit Links</li>
+                    </ul>
+                </div>                
+                <h2 class="title">
+                    <i class="fa-solid fa-envelope"></i>
+                    Social
+                </h2>
+                <div class="links"></div>
+                <a href="https://www.twitter.com">Twitter</a>
+                <a href="https://reddit.com">Reddit</a>
+                <a href="https://dev.to/">Dev.to</a>
+                <a href="https://proton.me/">Proton</a>
+
+            </div>
+
+
+            <!-- Developer Container -->
+            <div class="container" id="dev">
+                <div class="dots-icon">
+                    <i class="fa-solid fa-ellipsis-h" onclick="toggleGroupMenu(event, 'dev')"></i>
+                </div>
+                <div class="group-menu" id="menu-dev">
+                    <ul>
+                        <li onclick="renameGroup('dev')">Rename</li>
+                        <li onclick="removeGroup('dev')">Remove</li>
+                        <li>Edit Links</li>
+                    </ul>
+                </div>
+                <h2 class="title">
+                    <i class="fa-solid fa-terminal"></i>
+                    Dev
+                </h2>
+                <div class="links">
+                    <a href="https://www.codecademy.com/">Codecademy</a>
+                    <a href="https://www.github.com">Github</a>
+                    <a href="https://developer.mozilla.org/en-US/">MDN Docs</a>
+                    <a href="https://Javascript.info/">Javascript.info</a>
+                </div>
+            </div>
+
+
+            <!-- Reading Container -->
+            <div class="container" id="read">
+                <div class="dots-icon">
+                    <i class="fa-solid fa-ellipsis-h" onclick="toggleGroupMenu(event, 'read')"></i>
+                </div>
+                <div class="group-menu" id="menu-read">
+                    <ul>
+                        <li onclick="renameGroup('read')">Rename</li>
+                        <li onclick="removeGroup('read')">Remove</li>
+                        <li>Edit Links</li>
+                    </ul>
+                </div>
+                <h2 class="title">
+                    <i class="fa-solid fa-book"></i>
+                    Read
+                </h2>
+                <div class="links">
+                    <a href="https://www.Goodreads.com/">Goodreads</a>
+                    <a href="https://www.medium.com/">Medium</a>
+                    <a href="https://libgen.is/">Libgen</a>
+                    <a href="https://www.creepypasta.com/">CreepyPasta</a>
+                </div>
+            </div>
+
+            <!-- Linux Container -->
+            <div class="container" id="linux">
+                <div class="dots-icon">
+                    <i class="fa-solid fa-ellipsis-h" onclick="toggleGroupMenu(event, 'linux')"></i>
+                </div>
+                <div class="group-menu" id="menu-linux">
+                    <ul>
+                        <li onclick="renameGroup('linux')">Rename</li>
+                        <li onclick="removeGroup('linux')">Remove</li>
+                        <li>Edit Links</li>
+                    </ul>
+                </div>
+                <h2 class="title">
+                    <i class="fa-brands fa-linux"></i>
+                    Linux
+                </h2>
+                <div class="links">
+                    <a href="https://explainshell.com/">Explainshell</a>
+                    <a href="https://wiki.archlinux.org/">Arch Wiki</a>
+                    <a href="https://distrowatch.com/">Distrowatch</a>
+                </div>
+            </div>
+
+            <!-- Hack Container -->
+            <div class="container" id="hack">
+                <div class="dots-icon">
+                    <i class="fa-solid fa-ellipsis-h" onclick="toggleGroupMenu(event, 'hack')"></i>
+                </div>
+                <div class="group-menu" id="menu-hack">
+                    <ul>
+                        <li onclick="renameGroup('hack')">Rename</li>
+                        <li onclick="removeGroup('hack')">Remove</li>
+                        <li>Edit Links</li>
+                    </ul>
+                </div>
+                <h2 class="title">
+                    <i class="fa-solid fa-mask"></i>
+                    Hack
+                </h2>
+                <div class="links">
+                    <a href="https://www.hackthebox.com/">HTB</a>
+                    <a href="https://tryhackme.com/">TryHackMe</a>
+                    <a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a>
+                    <a href="https://any.run/">Any.run</a>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img class="image grow" alt="main image" src="D:\git_repo\Forbidden-startpage-main\Forbidden-startpage-main\img/guts.WebP">
+    </div>
+
+    <!-- Settings and Add Link Icons -->
+    <div class="icons-container">
+        <i class="fa-solid fa-cog settings-icon" onclick="toggleSidebar()"></i>
+        <i class="fa-solid fa-plus add-link-icon" onclick="toggleAddLinkMenu()"></i>
+    </div>
+
+    <!-- Settings Sidebar -->
+    <div class="settings-sidebar">
+        <i class="fa-solid fa-times close-icon" onclick="toggleSidebar()"></i>
+        <h2>Settings</h2>
+        <!-- Add your settings options here -->
+        <div class="groups-section">
+            <h3>Groups</h3>
+            <div class="group">
+                <div class="group-header" onclick="toggleGroup('social')">
+                    Social
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="group-links" id="social">
+                    <li><a href="https://www.twitter.com">Twitter</a></li>
+                    <li><a href="https://reddit.com">Reddit</a></li>
+                    <li><a href="https://dev.to/">Dev.to</a></li>
+                    <li><a href="https://proton.me/">Proton</a></li>
+                </ul>
+            </div>
+            <div class="group">
+                <div class="group-header" onclick="toggleGroup('dev')">
+                    Dev
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="group-links" id="dev">
+                    <li><a href="https://www.codecademy.com/">Codecademy</a></li>
+                    <li><a href="https://www.github.com">Github</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/">MDN Docs</a></li>
+                    <li><a href="https://Javascript.info/">Javascript.info</a></li>
+                </ul>
+            </div>
+            <!-- Add more groups as needed -->
+        </div>
+    </div>
+
+
+    <!-- Add Link Menu -->
+    <div class="add-link-menu">
+        <h3>Add New Shortcut</h3>
+        <label for="link-name">Name:</label>
+        <input type="text" id="link-name" name="link-name">
+        <label for="link-url">URL:</label>
+        <input type="text" id="link-url" name="link-url">
+        <label for="link-group">Group:</label>
+        <select id="link-group" name="link-group">
+            <option value="social">Social</option>
+            <option value="dev">Dev</option>
+            <option value="read">Read</option>
+            <option value="linux">Linux</option>
+            <option value="hack">Hack</option>
+        </select>
+        <div id="new-group-name" style="display: none;">
+            <label for="new-group-name-input">Group name:</label>
+            <input type="text" id="new-group-name-input" name="new-group-name-input">
+        </div>
+        <div class="add-link-buttons">
+            <button onclick="addLink()">ADD</button>
+            <button onclick="toggleAddLinkMenu()">Cancel</button>
+        </div>
+    </div>
+</body>
+
+</html>
