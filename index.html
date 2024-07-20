@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/50ca4bca32.js" crossorigin="anonymous"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
     <script src="./script/time.js" async></script>
     <script src="./script/themes.js" async></script>
     <script src="./script/sidebar.js" async></script>
@@ -47,13 +47,51 @@
                     Social
                 </h2>
                 <div class="links"></div>
-                <a href="https://www.twitter.com">Twitter</a>
-                <a href="https://reddit.com">Reddit</a>
-                <a href="https://dev.to/">Dev.to</a>
-                <a href="https://proton.me/">Proton</a>
+                <a href="https://mail.google.com">Gmail</a>
 
             </div>
 
+            <!-- Reading Container -->
+            <div class="container" id="learn">
+                <div class="dots-icon">
+                    <i class="fa-solid fa-ellipsis-h" onclick="toggleGroupMenu(event, 'learn')"></i>
+                </div>
+                <div class="group-menu" id="menu-learn">
+                    <ul>
+                        <li onclick="renameGroup('learn')">Rename</li>
+                        <li onclick="removeGroup('learn')">Remove</li>
+                        <li>Edit Links</li>
+                    </ul>
+                </div>
+                <h2 class="title">
+                    <i class="fa-solid fa-brain"></i>
+                    Learn
+                </h2>
+                <div class="links">
+                    
+                </div>
+            </div>
+
+            <!-- Hack Container -->
+            <div class="container" id="hack">
+                <div class="dots-icon">
+                    <i class="fa-solid fa-ellipsis-h" onclick="toggleGroupMenu(event, 'hack')"></i>
+                </div>
+                <div class="group-menu" id="menu-hack">
+                    <ul>
+                        <li onclick="renameGroup('hack')">Rename</li>
+                        <li onclick="removeGroup('hack')">Remove</li>
+                        <li>Edit Links</li>
+                    </ul>
+                </div>
+                <h2 class="title">
+                    <i class="fa-solid fa-mask"></i>
+                    Hack
+                </h2>
+                <div class="links">
+                    <a href="https://tryhackme.com/">TryHackMe</a>
+                </div>
+            </div>
 
             <!-- Developer Container -->
             <div class="container" id="dev">
@@ -72,10 +110,7 @@
                     Dev
                 </h2>
                 <div class="links">
-                    <a href="https://www.codecademy.com/">Codecademy</a>
                     <a href="https://www.github.com">Github</a>
-                    <a href="https://developer.mozilla.org/en-US/">MDN Docs</a>
-                    <a href="https://Javascript.info/">Javascript.info</a>
                 </div>
             </div>
 
@@ -127,42 +162,33 @@
                 </div>
             </div>
 
-            <!-- Hack Container -->
-            <div class="container" id="hack">
-                <div class="dots-icon">
-                    <i class="fa-solid fa-ellipsis-h" onclick="toggleGroupMenu(event, 'hack')"></i>
-                </div>
-                <div class="group-menu" id="menu-hack">
-                    <ul>
-                        <li onclick="renameGroup('hack')">Rename</li>
-                        <li onclick="removeGroup('hack')">Remove</li>
-                        <li>Edit Links</li>
-                    </ul>
-                </div>
-                <h2 class="title">
-                    <i class="fa-solid fa-mask"></i>
-                    Hack
-                </h2>
-                <div class="links">
-                    <a href="https://www.hackthebox.com/">HTB</a>
-                    <a href="https://tryhackme.com/">TryHackMe</a>
-                    <a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a>
-                    <a href="https://any.run/">Any.run</a>
-                </div>
-            </div>
 
             
         </div>
     </div>
 
     <div class="image-container">
-        <img class="image grow" alt="main image" src="D:\git_repo\Forbidden-startpage-main\Forbidden-startpage-main\img/guts.WebP">
+        <img class="image grow" alt="main image" src="./img/guts.WebP">
     </div>
 
     <!-- Settings and Add Link Icons -->
     <div class="icons-container">
         <i class="fa-solid fa-cog settings-icon" onclick="toggleSidebar()"></i>
         <i class="fa-solid fa-plus add-link-icon" onclick="toggleAddLinkMenu()"></i>
+        <span class="material-symbols-outlined">search</span>
+        <span class="material-symbols-outlined">home</span>
+        <span class="material-symbols-outlined">settings</span>
+        <span class="material-symbols-outlined">favorite</span>
+    </div>
+
+
+    <div class="icon-tray" id="icon-tray">
+        <span class="close" onclick="toggleIconTray()">✖</span>
+        <div class="icon" onclick="selectIcon('fa-star')"><i class="fas fa-star"></i></div>
+        <div class="icon" onclick="selectIcon('fa-heart')"><i class="fas fa-heart"></i></div>
+        <div class="icon" onclick="selectIcon('fa-lightbulb')"><i class="fas fa-lightbulb"></i></div>
+        <div class="icon" onclick="selectIcon('fa-leaf')"><i class="fas fa-leaf"></i></div>
+        <!-- Add more icons as needed -->
     </div>
 
     <!-- Settings Sidebar -->
@@ -211,6 +237,7 @@
         <label for="link-group">Group:</label>
         <select id="link-group" name="link-group">
             <option value="social">Social</option>
+            <option value="learn">Learn</option>
             <option value="dev">Dev</option>
             <option value="read">Read</option>
             <option value="linux">Linux</option>
@@ -219,6 +246,11 @@
         <div id="new-group-name" style="display: none;">
             <label for="new-group-name-input">Group name:</label>
             <input type="text" id="new-group-name-input" name="new-group-name-input">
+            <label for="new-group-icon">Select Icon:</label>
+            <div>
+                <i id="selected-icon" class="fas fa-question-circle"></i>
+                <button type="button" onclick="toggleIconTray()">Select Icon</button>
+            </div>
         </div>
         <div class="add-link-buttons">
             <button onclick="addLink()">ADD</button>

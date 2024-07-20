@@ -4,6 +4,12 @@ function toggleAddLinkMenu() {
     menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
 }
 
+// Function to toggle the visibility of the icon tray
+function toggleIconTray() {
+    const tray = document.getElementById('icon-tray');
+    tray.style.display = tray.style.display === 'none' || tray.style.display === '' ? 'block' : 'none';
+}
+
 // Function to add a new link to the selected group
 function addLink() {
     const name = document.getElementById('link-name').value;
